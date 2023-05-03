@@ -1,7 +1,7 @@
 package com.portfolio.mgb.service;
 
 import com.portfolio.mgb.Interface.IPersonaService;
-import com.portfolio.mgb.entity.persona;
+import com.portfolio.mgb.entity.Persona;
 import com.portfolio.mgb.repository.IPersonaRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,14 +13,14 @@ public class ImpPersonaService implements IPersonaService{
 @Autowired IPersonaRepository iPersonaRepository;   
 
     @Override
-    public List<persona> getpersona() {
-        List<persona>Persona = iPersonaRepository.findAll();
+    public List<Persona> getpersona() {
+        List<Persona>Persona = iPersonaRepository.findAll();
         return Persona;         
                 
     }
 
     @Override
-    public void savepersona(persona persona) {
+    public void savepersona(Persona persona) {
         iPersonaRepository.save(persona);
     }
 
@@ -30,10 +30,9 @@ public class ImpPersonaService implements IPersonaService{
     }
 
     @Override
-    public persona findpersona(Long id) {
-       persona Persona = iPersonaRepository.findById(id).orElse(null);
+    public Persona findpersona(Long id) {
+       Persona Persona = iPersonaRepository.findById(id).orElse(null);
        return Persona;
     }
-    
-    
+
 }
