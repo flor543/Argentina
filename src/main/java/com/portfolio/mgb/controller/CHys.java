@@ -7,7 +7,7 @@ package com.portfolio.mgb.controller;
 
 import com.portfolio.mgb.Dto.dtoHys;
 import com.portfolio.mgb.Security.Controller.Mensaje;
-import com.portfolio.mgb.Security.Entity.hys;
+import com.portfolio.mgb.entity.hys;
 import com.portfolio.mgb.service.Shys;
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;
@@ -32,6 +32,7 @@ public class CHys {
     @Autowired
     Shys shys;
 
+  
     @GetMapping("/lista")
     public ResponseEntity<List<hys>> list() {
         List<hys> list = shys.list();
@@ -77,8 +78,9 @@ public class CHys {
         if (!shys.existsById(id)) {
             return new ResponseEntity(new Mensaje("El ID no existe"), HttpStatus.BAD_REQUEST);
         }
-        //Compara nombre de experiencias
-        if (shys.existsByNombre(dtohys.getNombre()) && shys.getByNombre(dtohys.getNombre()).get().getId() != id) {
+        //Compara nombre de skills
+        if (shys.existsByNombre(dtohys.getNombre()) && shys.getByNombre(dtohys.getNombre()).get()
+                .getId() != id) {
             return new ResponseEntity(new Mensaje("Esa skill ya existe"), HttpStatus.BAD_REQUEST);
         }
         //No puede estar vacio

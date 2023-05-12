@@ -5,7 +5,7 @@
  */
 package com.portfolio.mgb.service;
 
-import com.portfolio.mgb.Security.Entity.hys;
+import com.portfolio.mgb.entity.hys;
 import com.portfolio.mgb.repository.Rhys;
 import java.util.List;
 import java.util.Optional;

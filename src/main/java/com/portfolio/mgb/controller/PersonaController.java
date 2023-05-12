@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,11 +22,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/Personas")
 @CrossOrigin(origins = {"https://frontendprueba-5687a.web.app","http://localhost:4200"})
 public class PersonaController {
-
-    @Autowired
+@Autowired
     ImpPersonaService personaService;
     
-@GetMapping("/lista")
+    @GetMapping("/lista")
     public ResponseEntity<List<Persona>> list(){
         List<Persona> list = personaService.list();
         return new ResponseEntity(list, HttpStatus.OK);
@@ -39,6 +39,12 @@ public class PersonaController {
         
         Persona persona = personaService.getOne(id).get();
         return new ResponseEntity(persona, HttpStatus.OK);
+    }
+    
+       @PostMapping("/crear")
+    public String createPersona(@RequestBody Persona persona) {
+        personaService.save(persona);
+        return "la persona fue creada correctamente";
     }
     
     /*@DeleteMapping("/delete/{id}")
@@ -67,7 +73,7 @@ public class PersonaController {
                 
     }*/
     
-    @PutMapping("/update/{id}")
+     @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody dtoPersona dtopersona){
         if(!personaService.existsById(id)){
             return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.NOT_FOUND);
@@ -90,5 +96,6 @@ public class PersonaController {
         
         return new ResponseEntity(new Mensaje("Persona actualizada"), HttpStatus.OK);
     }
+   
 }
 

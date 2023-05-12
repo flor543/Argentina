@@ -12,7 +12,8 @@ import org.springframework.stereotype.Service;
 @Service 
 @Transactional
 public class ImpPersonaService{
-  @Autowired
+
+    @Autowired
     IPersonaRepository ipersonaRepository;
     
     public List<Persona> list(){

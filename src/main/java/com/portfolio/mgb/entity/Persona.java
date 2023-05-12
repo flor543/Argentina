@@ -12,9 +12,8 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-
 @Entity
-public class Persona {
+public class Persona{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -87,5 +86,4 @@ public class Persona {
     
     
     
-}    
-
+}

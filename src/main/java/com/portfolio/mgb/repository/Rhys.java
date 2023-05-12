@@ -5,7 +5,7 @@
  */
 package com.portfolio.mgb.repository;
 
-import com.portfolio.mgb.Security.Entity.hys;
+import com.portfolio.mgb.entity.hys;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 
