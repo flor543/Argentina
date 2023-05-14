@@ -7,6 +7,7 @@ export const environment = {
     apiKey: 'AIzaSyCyIdUZ7ihr2gBUm2TSElyCt40m_1-1o0c',
     authDomain: 'frontendprueba-5687a.firebaseapp.com',
     messagingSenderId: '438371764771',
-    
+    production: true,
+      URL: 'https://frontendprueba-5687a.web.app'
   },};
 

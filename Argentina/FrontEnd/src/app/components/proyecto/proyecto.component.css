@@ -1,16 +1,21 @@
 .row{
+    background-color: rgb(245, 212, 235);
+    padding: 20px;
     background-color: #80bdff; 
+    font-family: "Raleway", sans-serif;
+    
 }
 .contenedor{
     width: auto;
 }
-.parte1, .parte2{
-    display:inline-block;
+.parte, .parte2{    /*parte escrita y foto*/
+    display: inline-block;
     text-align: justify;
+    margin: center;
+    
 }
-.img-proyecto{
-    box-shadow: 10px 10px 30px #000000;
-
-    
-    
+.img-proyecto{  /*Flota la imagen con color de fondo*/
+    box-shadow: 10px 10px 30px #392e2e;
+    min-width: 200px;
+    max-width: 400px;
 }
